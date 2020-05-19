@@ -820,3 +820,41 @@ Processing by PostsController#show as */*
 Completed 200 OK in 54ms (Views: 47.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/posts/5/edit" for 71.105.123.240 at 2020-05-19 15:27:21 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5/edit" for 71.105.123.240 at 2020-05-19 15:27:22 +0000
+Processing by PostsController#edit as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/5" for 71.105.123.240 at 2020-05-19 15:27:40 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yxOzGwDgaqrcP5S6BkNSZ/U5aZc4ZEWzyRsXS5Hgf+t7eixvdUwTFp3qdYaAo5U9k3pYgjOYiheSrLeqsDm1+g==", "post"=>{"title"=>"New Post", "description"=>"this is the new description\r\n"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "this is the new description\r\n"], ["updated_at", "2020-05-19 15:27:40.951585"], ["id", 5]]
+  [1m[35m (60.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://174.138.35.103:60002/posts/5
+Completed 302 Found in 67ms (ActiveRecord: 61.3ms)
+
+
+Started GET "/posts/5" for 71.105.123.240 at 2020-05-19 15:27:41 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+
+
