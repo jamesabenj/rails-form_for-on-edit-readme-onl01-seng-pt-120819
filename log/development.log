@@ -805,3 +805,18 @@ Completed 302 Found in 23ms (ActiveRecord: 20.3ms)
 Started GET "/posts/5" for 71.105.123.240 at 2020-05-19 15:26:25 +0000
 Processing by PostsController#show as HTML
   Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5" for 71.105.123.240 at 2020-05-19 15:26:26 +0000
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
